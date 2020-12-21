@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <style>
+          .center{
+          position: absolute;
+          top: 10%;
+          left: 15%;
+          font-size: 60px;
+          }
+      </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> {% block title%} {% endblock %}
+  </title>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
+<div class="col-10">
+
+</div>
+
+<button type="botton" class="btn btn-outline-success col" data-toggle="modal" data-target="#loginModal">
+    Login
+</button>
+<!-- Button trigger modal -->
+<button type="botton" class="btn btn-outline-success col" data-toggle="modal" data-target="#signupModal">
+    Signup
+</button>
+ </nav>
+  <div >
+       {% load static %}
+      <img src='{% static "shop/pp.jpg" %}' width="100%" height="700px" >
+<div class="center  text-primary"><b>Welcome My Online Shopping Cart</b></div>
+<!-- LoginModal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginTitleModal">login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                <form action="login" method="post">
+                    {% csrf_token %}
+  <div class="form-group">
+    <label for="loginusername">Enter Username</label>
+    <input type="text" class="form-control" id="loginusername" name="loginusername" aria-describedby="emailHelp" placeholder="Enter  username" required>
+  </div>
+
+   <div class="form-group">
+    <label for="loginPassword">Enter Password</label>
+    <input type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="Confirm Password " required>
+  </div>
+  <button type="submit" class="btn btn-primary" value="login">Submit</button>
+</form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- SignupModal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupTitleModal">Signup</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                <form action="/signup" method="post">
+                    {% csrf_token %}
+  <div class="form-group">
+    <label for="username">Enter Username</label>
+    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Enter  username"  required>
+  </div>
+
+    <div class="form-group">
+    <label for="fname">First Name</label>
+    <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp" placeholder="Enter  First Name"  required>
+  </div>
+
+   <div class="form-group">
+    <label for="lname">Last Name</label>
+    <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp" placeholder="Enter last Name"  required>
+  </div>
+
+    <div class="form-group">
+    <label for="email">Enter Email</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email"  required>
+  </div>
+  <div class="form-group">
+    <label for="Password1">Enter Password</label>
+    <input type="password" class="form-control" id="Password1" name="Password1" placeholder="Enter  Password"  required>
+  </div>
+
+   <div class="form-group">
+    <label for="Password2">Confirm Password</label>
+    <input type="password" class="form-control" id="Password2" name="Password2" placeholder="Confirm Password " required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </head>
+
+  <body>
+
+<!-- loginModal -->
+
+
+
+       <script src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  </body>
+</html>
